@@ -10,13 +10,10 @@ on:
 
 env:
   GITHUB_CR: ghcr.io
-  # ALIYUN_CR: registry.cn-hangzhou.aliyuncs.com
-  # ALIYUN_PROJECT_NAME: scow
 
 jobs:
 
   build:
-    needs: test
     runs-on: ubuntu-latest
 
     permissions:
