@@ -4,7 +4,8 @@ ARG NOVNC_VERSION=v1.3.0
 
 RUN apk update && apk add git
 
-RUN git clone -c advice.detachedHead=false --depth=1 --branch ${NOVNC_VERSION} https://github.com/novnc/noVNC /novnc
+RUN git clone -c advice.detachedHead=false --depth=1 --branch ${NOVNC_VERSION} https://github.com/novnc/noVNC /novnc  && \
+    rm /novnc/.git/config
 
 COPY nginx.conf /etc/nginx/templates/default.conf.template
 
